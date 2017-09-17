@@ -12,11 +12,11 @@ By linking with arrow, the sequences of activies are evidently show on the diagr
 
 Each node represents one independant activity. Basically, there are 7 members for one node: Early Start, Early Finish(or Early End), Late Start, Late Finish(or Late Finish), Duration, Act ID and Description.
 
-Early Start: The earliest start date of an activity.
+-Early Start: The earliest start date of an activity.
 
-Early Finish: The earliest finish date of an activity.
+-Early Finish: The earliest finish date of an activity.
 
-Late Start: The latest start date of an activity.
+-Late Start: The latest start date of an activity.
 
 Late Finish: The latest finish date of an activity.
 
