@@ -14,17 +14,17 @@ Each node represents one independant activity. Basically, there are 7 members fo
 
 - Early Start: The earliest start date of an activity.
 
--Early Finish: The earliest finish date of an activity.
+- Early Finish: The earliest finish date of an activity.
 
--Late Start: The latest start date of an activity.
+- Late Start: The latest start date of an activity.
 
-Late Finish: The latest finish date of an activity.
+- Late Finish: The latest finish date of an activity.
 
-Duration: The minimum time cost of an activity.
+- Duration: The minimum time cost of an activity.
 
-Act ID: The unique ID of an activity.
+- Act ID: The unique ID of an activity.
 
-Description: Brief summary of an activity.
+- Description: Brief summary of an activity.
 
 ## 2.2 Delay
 
@@ -44,13 +44,13 @@ Free float: the maximum delay time of one activity which won't do harm to the ea
 
 Generally, there are 4 kinds of relationships between different independant activities.
 
-Finish-Start: the most prevalent one. The successor won't start until its predecessor is finished.
+- Finish-Start: the most prevalent one. The successor won't start until its predecessor is finished.
 
-Finish-Finish: the successor should be finished when its predecessor is finished.
+- Finish-Finish: the successor should be finished when its predecessor is finished.
 
-Start-Start: the succesor should start when its predecessor starts.
+- Start-Start: the succesor should start when its predecessor starts.
 
-Start-Finish: the most rare one. The successor should be finished when its predecessor starts.
+- Start-Finish: the most rare one. The successor should be finished when its predecessor starts.
 
 This project is based on the Finish-Start relationship/sequence, which means the start time of successor should not be earlier than any of its predecessors.
 
@@ -90,22 +90,22 @@ The sum of their duration, basically, is the duration of the whole construction.
 
 ## 4.2 Attribute
 
-All projects have at least one critical path.
+- All projects have at least one critical path.
 
-All critical activities belong to critical path.
+- All critical activities belong to critical path.
 
-Delay in critical activities/path extends duration of the construction.
+- Delay in critical activities/path extends duration of the construction.
 
-Noncritical activities can be delayed more than one day without effecting the duration of construction.
+- Noncritical activities can be delayed more than one day without effecting the duration of construction.
 
-To decrease the duration, focus on shortening critical activities.
+- To decrease the duration, focus on shortening critical activities.
 
-Decreasing the duration of critical activities can generate new critical activity or critical path.
+- Decreasing the duration of critical activities can generate new critical activity or critical path.
 
 # 5.Objectives
 
-By entering the elementary members of node and there sequences, the user can get a generated AON diagram.
+- By entering the elementary members of node and there sequences, the user can get a generated AON diagram.
 
-Different kinds of float will be shown automatically.
+- Different kinds of float will be shown automatically.
 
-GUI(Perhaps :) ).
+- GUI(Perhaps :) ).
