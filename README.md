@@ -1,14 +1,14 @@
-# ActivityOnNode
+### ActivityOnNode
 
-1.Introduction
+## 1.Introduction
 
 Activity-On-Node is a kind of diagram that shows the relationships between different activities in construction.
 
 By linking with arrow, the sequences of activies are evidently show on the diagram.
 
-2. Key Words
+## 2. Key Words
 
-2.1 Members of Activity
+# 2.1 Members of Activity
 
 Each node represents one independant activity. Basically, there are 7 members for one node: Early Start, Early Finish(or Early End), Late Start, Late Finish(or Late Finish), Duration, Act ID and Description.
 
@@ -26,13 +26,13 @@ Act ID: The unique ID of an activity.
 
 Description: Brief summary of an activity.
 
-2.2 Delay
+# 2.2 Delay
 
 Due to the uncertainty of construction, delay happens frequently.
 
 Delay can leads to the change of finish date and the start date of successor. In the most serious situation, the delay of one single activity can extend the duration of the whole construction.
 
-2.3 Float
+# 2.3 Float
 
 Generally, there are 4 kinds of float in construction: total float, free float, interfering float and independant float。
 
@@ -40,7 +40,7 @@ Total float: the maximum delay time of one activity which won't do harm to the d
 
 Free float: the maximum delay time of one activity which won't do harm to the early start time of its successor.
 
-2.4 Relationship
+# 2.4 Relationship
 
 Generally, there are 4 kinds of relationships between different independant activities.
 
@@ -54,13 +54,13 @@ Start-Finish: the most rare one. The successor should be finished when its prede
 
 This project is based on the Finish-Start relationship/sequence, which means the start time of successor should not be earlier than any of its predecessors.
 
-3.Activity-On-Node
+## 3.Activity-On-Node
 
-1. Concept
+# 1. Concept
 
 The AON diagram is consisted by arrows and node.
 
-2. Arrow
+# 2. Arrow
 
 The arrow should be drawn from left to right to demonstrate the sequnces.
 
@@ -70,15 +70,15 @@ Make the crossing of arrows as few as possible.
 
 When crossing, draw a fly line to highlight.
 
-3.Node
+# 3.Node
 
 Node should be drawn in rectangle.
 
 There should be a start node and end node to illustrate the beginning and end(activity can act as one).
 
-4.Critical Path
+## 4.Critical Path
 
-4.1 Introduction
+# 4.1 Introduction
 
 Critical Path is one determines the duration of construction.
 
@@ -88,7 +88,7 @@ Critical activities have the latest start and finish time in their siblings.
 
 The sum of their duration, basically, is the duration of the whole construction.
 
-4.2 Attribute
+# 4.2 Attribute
 
 All projects have at least one critical path.
 
@@ -102,7 +102,7 @@ To decrease the duration, focus on shortening critical activities.
 
 Decreasing the duration of critical activities can generate new critical activity or critical path.
 
-5.Objectives
+## 5.Objectives
 
 By entering the elementary members of node and there sequences, the user can get a generated AON diagram.
 
