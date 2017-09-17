@@ -27,4 +27,4 @@ private:
   unsigned int Duration;
   int ActID;
   string Description;
-}
+}；
