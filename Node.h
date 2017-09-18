@@ -1,3 +1,6 @@
+#ifndef NODE_H
+#define NODE_H
+
 #include<vector>
 #include<string>
 
@@ -26,3 +29,5 @@ private:
   int ActID;
   string Description;
 }；
+
+#endif
