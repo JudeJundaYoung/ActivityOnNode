@@ -13,7 +13,7 @@ class Node
 public:
   Node() = default;
   Node(Date, Date, Date, Date, unsigned int, 
-String, string);
+string, string);
   Node(Date, Date, Date, Date);
   Node(Date, Date, Date, Date, unsigned int);
   Node(const Node&);
