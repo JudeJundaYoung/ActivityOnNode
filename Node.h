@@ -9,15 +9,13 @@ class Node
 public:
   Node();
   Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration, int ActID, string Description);
+  Node(Date ES, Date EF, Date LS, Date LF);
+  Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration);
   Node(const Node&);
   Node(Node&&);
   Node& operator = (const Node&);
   Node& operator = (Node&&);
-  ~Node();
-
-
-
-
+  ~Node() = default;
 
 private:
   Date EarlyStart;
