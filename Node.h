@@ -10,7 +10,7 @@ class Node
 {
   typedef unsigned int Date;
 public:
-  Node();
+  Node() = default;
   Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration, int ActID, string Description);
   Node(Date ES, Date EF, Date LS, Date LF);
   Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration);
