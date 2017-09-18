@@ -11,9 +11,10 @@ class Node
   typedef unsigned int Date;
 public:
   Node() = default;
-  Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration, int ActID, string Description);
-  Node(Date ES, Date EF, Date LS, Date LF);
-  Node(Date ES, Date EF, Date LS, Date LF, unsigned int Duration);
+  Node(Date, Date, Date, Date, unsigned int, 
+String, string);
+  Node(Date, Date, Date, Date);
+  Node(Date, Date, Date, Date, unsigned int);
   Node(const Node&);
   Node(Node&&);
   Node& operator = (const Node&);
@@ -26,7 +27,7 @@ private:
   Date LateStart;
   Date LateFinish;
   unsigned int Duration;
-  int ActID;
+  string ActID;
   string Description;
 }；
 
