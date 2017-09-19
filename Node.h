@@ -6,6 +6,7 @@
 #include<string>
 
 using std::string;
+using std::vector;
 
 class Node
 {
@@ -13,16 +14,18 @@ class Node
 public:
   Node() = default;
   Node(Date, Date, Date, Date, unsigned int, 
-String, string);
+string, string);
   Node(Date, Date, Date, Date);
   Node(Date, Date, Date, Date, unsigned int);
   Node(const Node&);
   Node(Node&&);
   Node& operator = (const Node&);
   Node& operator = (Node&&);
-  ~Node() = default;
+  ~Node() = default;  // 
 
-private:
+
+  
+ private:
   Date EarlyStart;
   Date EarlyFinish;
   Date LateStart;
@@ -30,6 +33,8 @@ private:
   unsigned int Duration;
   string ActID;
   string Description;
+  vector<Node* > Predecessors;
+  vector<Node* > Successors;   
 }；
 
 #endif
