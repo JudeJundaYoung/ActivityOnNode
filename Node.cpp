@@ -14,6 +14,7 @@ Node::Node(Date ES, Date EF, Date LS, Date LF): EarlyStart(ES),EarlyFinish(EF),
               if(Dura1!=Dura2)
               {
                   //throw("")；//抛出异常
+                  throw std::invalid_argument( "received negative value" );
               }
               else
               {
