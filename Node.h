@@ -15,9 +15,10 @@ public:
   Node() = default;
   Node(Date, Date, Date, Date, unsigned int, 
 string, string);
-  Node(Date, Date, Date, Date);
+  Node(unsigned int); //only contains the duration of activity
+  Node(Date, Date, Date, Date); //only contains the ES,EF,LS,LF of the activity
   Node(Date, Date, Date, Date, unsigned int);
-  Node(const Node&);
+  Node(const Node&); 
   Node(Node&&);
   Node& operator = (const Node&);
   Node& operator = (Node&&);
