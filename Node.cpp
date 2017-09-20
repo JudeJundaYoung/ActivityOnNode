@@ -1,11 +1,16 @@
 #include Node.h
 
+// detailed
 Node::Node(Date ES, Date EF, Date LS, Date LF, unsigned int Dura, 
            string ID,string Desc): EarlyStart(ES), EarlyFinish(EF),
           LateStart(LS), LateFinish(LF), Duration(Dura), ActID(ID),
           Description(Desc)
           {}
+// only duration entered
+Node::Node(unsigned int Dura):duration(Dura)
+           {}
 
+// lack of ActID and Description
 Node::Node(Date ES, Date EF, Date LS, Date LF): EarlyStart(ES),EarlyFinish(EF),
            LateStart(LS), LateFinish(LF)
            {
@@ -13,8 +18,8 @@ Node::Node(Date ES, Date EF, Date LS, Date LF): EarlyStart(ES),EarlyFinish(EF),
               unsigned int Dura2 = LF - LS;
               if(Dura1!=Dura2)
               {
-                  //throw("")；//抛出异常
-                  throw std::invalid_argument( "received negative value" );
+                  //输入的起止时间所计算出的duration不一致
+                  throw std::invalid_argument( "Durations don't correspondense" );
               }
               else
               {
