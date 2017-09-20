@@ -23,7 +23,11 @@ string, string);
   Node& operator = (const Node&);
   Node& operator = (Node&&);
   ~Node() = default;  // 
+  
+  void printParameters();
 
+  void add_predecessor(const Node&);
+  void add_successsor(const Node&);
 
   
  private:
