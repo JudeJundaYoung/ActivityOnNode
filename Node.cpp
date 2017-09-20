@@ -86,6 +86,47 @@ Node& Node::operator= (Node&&)
   return *this;
 }
 
+bool Node::check_Elmentary_Parameters()
+{   
+  if(EarlyStart==0||EarlyFinish==0||LateStart==0||LateFinish==0||Duratin==0)
+  {
+             return 0;
+  }
+           return 1;
+}
+
+bool Node::check_Optional_Parameters()
+{
+           if(ActID.empty()||Description.empty())
+           {
+                      return 0;
+           }
+           return 1;
+}
+
+void Node::printParameters()
+{
+         if(check_Elementary_Parameters())
+         {
+                    cout<<"EarlyStart: "<<EarlyStart<<endl;
+                    cout<<"EarlyFinish: "<<EarlyFinish<<endl;
+                    cout<<"LateStart: "<<LateStart<<endl;
+                    cout<<"LateFinish: "<<LateFinish<<endl;
+                    cout<<"Duration: "<<Duration<<endl;
+         }
+           if(check_Optional_Parameters())
+           {
+                    cout<<"ActID: "<<ActID<<endl;
+                      cout<<"Description: "<<Description<<endl;
+           }
+}
+
+void add_predecessor(const Node & pre)
+{
+           if(pre.EarlyFinish>EarlyStart||pre.LateFinish>LateStart)
+                      //throw
+                 
+                  
   
           
 
