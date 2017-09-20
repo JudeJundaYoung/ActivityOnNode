@@ -4,9 +4,12 @@
 #include<utility>
 #include<vector>
 #include<string>
+#include<vector>
 
 using std::string;
 using std::vector;
+using std::cout;
+using std::endl;
 
 class Node
 {
@@ -24,7 +27,10 @@ string, string);
   Node& operator = (Node&&);
   ~Node() = default;  // 
   
-  void printParameters();
+  bool check_Elementary_Parameters();
+  bool check_Optional_Parameters();
+  
+  void print_Parameters();
 
   void add_predecessor(const Node&);
   void add_successsor(const Node&);
