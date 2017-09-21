@@ -26,5 +26,6 @@ private:
   map<string ,Node *> Nodes;    //存放图里的点；keyvalue
   Node* start;//开始时间最早的点，不能有箭头指向他，如果存在多个最早开始点，新建一个Duration为0的点作为Start；
   Node* end;//结束时间最晚的点，不能产生新的箭头，如果存在多个最晚完成点，新建一个Duration为0的点作为End;
-}
+};
 
+#endif
