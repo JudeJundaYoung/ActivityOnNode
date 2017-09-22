@@ -2,17 +2,21 @@
 #define AON_H
 
 #include "Node.h"
+#include "USER_INTERFACE.h"
 #include<map>
 #include<string>
 
 using std::string;
 using std::map;
+using std::initializer_list;
 
 class AON
 {
+	friend class User_Interface;
+
 public:
   AON() = default;//先把构造和析构设为default，结构复杂之后再自己写吧
-  AON(initializer_list<Node *>);
+  AON(initializer_list<Node*>);
   AON(const AON&);
   AON(AON&&);
   AON& operator=(const AON&);
