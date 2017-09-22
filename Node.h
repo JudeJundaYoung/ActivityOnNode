@@ -6,11 +6,13 @@
 #include<string>
 #include<vector>
 #include <iostream>
+#include<set>
 
 using std::string;
 using std::vector;
 using std::endl;
-using namespace std;
+using std::set;
+using std::cout;
 
 class Node
 {
@@ -28,13 +30,13 @@ string, string);
   Node& operator = (Node&&);
   ~Node() = default;  // 
   
-    bool check_Elementary_Parameters();
-    bool check_Optional_Parameters();
+    bool check_Elementary_Parameters() const;
+    bool check_Optional_Parameters() const;
   
-    void print_Parameters();
+    void print_Parameters() const; 
 
-  void add_predecessor(const Node&);
-  void add_successsor(const Node&);
+  void add_predecessor(Node&);
+  void add_successsor(Node&);
 
   
  private:
@@ -45,8 +47,8 @@ string, string);
   unsigned int Duration;
   string ActID;
   string Description;
-  vector<Node* > Predecessors;
-  vector<Node* > Successors;   
+  set<Node* > Predecessors;
+  set<Node* > Successors;   
 };
 
 #endif

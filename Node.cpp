@@ -1,4 +1,4 @@
-#include Node.h
+#include "Node.h"
 
 // detailed
 Node::Node(Date ES, Date EF, Date LS, Date LF, unsigned int Dura, 
@@ -7,7 +7,7 @@ Node::Node(Date ES, Date EF, Date LS, Date LF, unsigned int Dura,
           Description(Desc)
           {}
 // only duration entered
-Node::Node(unsigned int Dura):duration(Dura)
+Node::Node(unsigned int Dura):Duration(Dura)
            {}
 
 // lack of ActID and Description
@@ -34,10 +34,10 @@ Node::Node(Date ES, Date EF, Date LS, Date LF, unsigned int Dura):
 
 Node::Node(const Node & rhs)
 {
-  ES = rhs.ES;
-  EF = rhs.EF;
-  LS = rhs.LS;
-  LF = rhs.LF;
+  EarlyStart = rhs.EarlyStart;
+  EarlyFinish = rhs.EarlyFinish;
+  LateStart = rhs.LateStart;
+  LateFinish = rhs.LateFinish;
   Duration = rhs.Duration;
   ActID = rhs.ActID;
   Description = rhs.Description;
@@ -45,57 +45,57 @@ Node::Node(const Node & rhs)
 
 Node::Node(Node && rhs)
 {
-  ES = std::move(rhs.ES);
-  EF = std::move(rhs.EF);
-  LS = std::move(rhs.LS);
-  LF = std::move(rhs.LF);
+  EarlyStart = std::move(rhs.EarlyStart);
+  EarlyFinish = std::move(rhs.EarlyFinish);
+  LateStart = std::move(rhs.LateStart);
+  LateFinish = std::move(rhs.LateFinish);
   Duration = std::move(rhs.Duration);
   ActID = std::move(rhs.ActID);
-  Description = stD::move(rhs.Description);
+  Description = std::move(rhs.Description);
 }
 
 Node& Node::operator= (const Node& rhs)
 {
-  if(this = &rhs)
+  if(this == &rhs)
   {
       return *this;
   }
-  ES = rhs.ES;
-  EF = rhs.EF;
-  LS = rhs.LS;
-  LF = rhs.LF;
+  EarlyStart = rhs.EarlyStart;
+  EarlyFinish = rhs.EarlyFinish;
+  LateStart = rhs.LateStart;
+  LateFinish = rhs.LateFinish;
   Duration = rhs.Duration;
   ActID = rhs.ActID;
   Description = rhs.Description;
   return *this;
 }
                     
-Node& Node::operator= (Node&&)
+Node& Node::operator= (Node&& rhs)
 {
-  if(this = &rhs)
+  if(this == &rhs)
   {
       return *this;
   }
-  ES = std::move(rhs.ES);
-  EF = std::move(rhs.EF);
-  LS = std::move(rhs.LS);
-  LF = std::move(rhs.LF);
+  EarlyStart = std::move(rhs.EarlyStart);
+  EarlyFinish = std::move(rhs.EarlyFinish);
+  LateStart = std::move(rhs.LateStart);
+  LateFinish = std::move(rhs.LateFinish);
   Duration = std::move(rhs.Duration);
   ActID = std::move(rhs.ActID);
-  Description = stD::move(rhs.Description);
+  Description = std::move(rhs.Description);
   return *this;
 }
 
-bool Node::check_Elmentary_Parameters()
+bool Node::check_Elementary_Parameters() const
 {   
-  if(EarlyStart==0||EarlyFinish==0||LateStart==0||LateFinish==0||Duratin==0)
+  if(EarlyStart==0||EarlyFinish==0||LateStart==0||LateFinish==0||Duration==0)
   {
              return 0;
   }
            return 1;
 }
 
-bool Node::check_Optional_Parameters()
+bool Node::check_Optional_Parameters() const
 {
            if(ActID.empty()||Description.empty())
            {
@@ -104,7 +104,7 @@ bool Node::check_Optional_Parameters()
            return 1;
 }
 
-void Node::printParameters()
+void Node::print_Parameters() const
 {
          if(check_Elementary_Parameters())
          {
@@ -121,13 +121,39 @@ void Node::printParameters()
            }
 }
 
-void add_predecessor(const Node & pre)
+void Node::add_predecessor(Node & pre)
 {
-           if(pre.EarlyFinish>EarlyStart||pre.LateFinish>LateStart)
-                      //throw
-                 
-                  
+	if (pre.EarlyFinish > EarlyStart || pre.LateFinish > LateStart)
+	{
+		//汉典帮我改一下 throw("Wrong Sequence");
+		return;
+	}
+	if (Predecessors.find(&pre) != Predecessors.end())
+	{
+		//throw("predecessor exists!")
+		return;
+	}
+	Predecessors.emplace(pre);                  
+	pre.add_successsor(*this);
 }
+
+void Node::add_successsor(Node & suc)
+{
+	if (suc.EarlyStart < EarlyFinish || suc.LateStart < LateFinish)
+	{
+		// throw(" Wrong sequence");
+		return;
+	}
+	if (Successors.find(&suc) != Predecessors.end())
+	{
+		//throw("Successor Exists!");
+		return;
+	}
+	Successors.emplace(suc);
+	suc.add_predecessor(*this);
+}
+
+
           
 
 
