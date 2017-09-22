@@ -23,10 +23,14 @@ public:
   AON& operator=(AON&&);
   ~AON() = default;
 
-  //向图中插入点,插入点的同时，更新start和end
+  //TODO:向图中插入点,插入点的同时，更新start和end
   void insert(const Node&);
   
-  void calculate();//对于只有开始结束时间的点，计算duration；对于只有duration的点，计算开始，结束时间
+  //TODO:对于只有开始结束时间的点，计算duration；对于只有duration的点，计算开始，结束时间
+  void calculate(Node&);
+
+  bool check_duration(const Node &) const;
+  bool check_time(const Node&) const;
   
   
 private:

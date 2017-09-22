@@ -23,14 +23,30 @@ AON::AON(initializer_list<Node *> list)
 
 void AON::insert(const Node& node)
 {
+	calculate(node);
 	Nodes.emplace(node.get_ActID(), node.get_Iterator());
 	//¸üÐÂSTART£¬END
 }
 
-void calculate(){};
+void AON::calculate(Node & node)
+{
+	if(check_duration())
+	{ }
+	else
+	{
+		if (check_time())
+		{
+		}
+	}
+	
+};
 
+bool AON::check_duration(const Node & node) const
+{
 
-int main(){
-	cout << "Hello World" << endl;
 }
+
+bool AON::check_time(const Node & node) const
+{}
+
 
