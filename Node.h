@@ -2,14 +2,11 @@
 #define NODE_H
 
 #include<utility>
-#include<vector>
 #include<string>
-#include<vector>
 #include <iostream>
 #include<set>
 
 using std::string;
-using std::vector;
 using std::endl;
 using std::set;
 using std::cout;
@@ -34,6 +31,8 @@ string, string);
     bool check_Optional_Parameters() const;
   
     void print_Parameters() const; 
+	string get_ActID() const;
+	const Node* get_Iterator() const;
 
   void add_predecessor(Node&);
   void add_successsor(Node&);

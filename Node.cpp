@@ -121,6 +121,16 @@ void Node::print_Parameters() const
            }
 }
 
+string Node::get_ActID() const
+{
+	return ActID;
+}
+
+const Node* Node::get_Iterator() const
+{
+	return this;
+}
+
 void Node::add_predecessor(Node & pre)
 {
 	if (pre.EarlyFinish > EarlyStart || pre.LateFinish > LateStart)
@@ -133,7 +143,7 @@ void Node::add_predecessor(Node & pre)
 		//throw("predecessor exists!")
 		return;
 	}
-	Predecessors.emplace(pre);                  
+	Predecessors.emplace(&pre);                  
 	pre.add_successsor(*this);
 }
 
@@ -149,7 +159,7 @@ void Node::add_successsor(Node & suc)
 		//throw("Successor Exists!");
 		return;
 	}
-	Successors.emplace(suc);
+	Successors.emplace(&suc);
 	suc.add_predecessor(*this);
 }
 
