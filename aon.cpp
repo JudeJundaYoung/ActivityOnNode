@@ -48,5 +48,30 @@ void Aon::calculate(){
 }
 
 void Aon::printAon(){
-	cout << nodes.size() <<endl;
+	cout << "The size of the Aon is " << nodes.size() << endl;
+}
+
+
+void Aon::createAon(){
+	int cond = 1;
+	string det;
+
+	cout << "Create an AON now" << endl;
+	while (cond){
+		string actid;
+		int duration;
+		cout << "Please create a Node" << endl;
+		cout << "Actid: ";
+		cin >> actid;
+		cout << "Duration: ";
+		cin >> duration;
+		Node node = Node(actid,duration);
+		nodes.insert (std::pair<std::string,Node*>(node.actid,&node));
+		cout << "Adding Node successfully. Do you want to continue? (y/n)" << endl;
+		cin >> det;
+		if (det == "n"){
+			cond = 0;
+		}
+	}
+	cout << "Thank you! An Aon is created." << endl;
 }
