@@ -2,9 +2,9 @@
 #include <string>
 using std::string;
 
-Node::Node(string k,int dur){
+Node::Node(string id,int dur){
 	duration = dur;
-	key = k;
+	actid = id;
 }
 
 void Node::add_pre(Node* nd){
@@ -13,14 +13,6 @@ void Node::add_pre(Node* nd){
 
 void Node::add_suc(Node* nd){
 	sucs.insert(nd);
-}
-
-void Node::printNode(){
-	// cout << nd.duration <<endl;
-	cout << "This is printNode" << endl;
-	cout << key << endl;
-	cout << duration << endl;
-
 }
 
 
@@ -52,20 +44,10 @@ void printsucs(Node& nd){
 	}
 }
 
-void printNoode(Node& nd){
-	cout << "This is Node  " << nd.key << endl;
+void printNode(Node& nd){
+	cout << "This is Node  " << nd.actid << endl;
 	cout << "The duration is " << nd.duration <<endl;
 	printpres(nd);
 	printsucs(nd);
 }
 
-
-
-//int main(){
-//	Node a = Node(1);
-//    cout << "Hello World" << endl;
-//    cout << "1 2 3" << endl;
-//    printNode();
-//}
-//
-//
