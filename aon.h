@@ -4,6 +4,7 @@
 // #include "node.h"
 #include <iostream>
 #include <map>
+#include <string>
 
 using namespace std;
 using std::map;
@@ -18,8 +19,7 @@ public:
 	void insert(Node&);
 	void calculate();
 	void printAon();
+	void createAon();
 };
-
-
 
 #endif
