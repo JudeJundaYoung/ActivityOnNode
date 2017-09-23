@@ -21,7 +21,7 @@ void Aon::insert(Node& node){
 		start = &node;
 		temp->pres.insert(&node);
 		node.sucs.insert(temp);
-		nodes.insert (std::pair<std::string,Node*>(node.key,&node));
+		nodes.insert (std::pair<std::string,Node*>(node.actid,&node));
 		// change node.key to node.actid when using nodes.insert
 	}
 	//Case 2: node is an end point
@@ -31,13 +31,13 @@ void Aon::insert(Node& node){
 		end = &node;
 		temp->sucs.insert(&node);
 		node.pres.insert(temp);
-		nodes.insert (std::pair<std::string,Node*>(node.key,&node));
+		nodes.insert (std::pair<std::string,Node*>(node.actid,&node));
 		// change node.key to node.actid when using nodes.insert
 	}
 	//Case 3: node is in between
 	else{
 		cout << "Case 3" << endl;
-		nodes.insert (std::pair<std::string,Node*>(node.key,&node));
+		nodes.insert (std::pair<std::string,Node*>(node.actid,&node));
 		// change node.key to node.actid when using nodes.insert
 	}
 }
